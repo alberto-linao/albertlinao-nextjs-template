@@ -9,11 +9,9 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
-  const supabaseClient = createClient;
-
   return (
     <SessionContextProvider
-      supabaseClient={supabaseClient}
+      supabaseClient={createClient}
       initialSession={pageProps.initialSession}
     >
       <Component {...pageProps} />;
