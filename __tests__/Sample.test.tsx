@@ -1,4 +1,3 @@
-import { describe } from "@jest/globals";
 import { add, subtract } from "../components/Sample";
 
 describe("Sample Componenet functions are correct", () => {
