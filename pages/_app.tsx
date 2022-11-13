@@ -1,8 +1,6 @@
-import "../styles/globals.css";
+import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import type { AppProps } from "next/app";
-import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
-import { SessionContextProvider, Session } from "@supabase/auth-helpers-react";
-import { useState } from "react";
+import "../styles/globals.css";
 import createClient from "../utils/supabase";
 
 export default function App({
