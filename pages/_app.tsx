@@ -1,3 +1,4 @@
+import { MantineProvider } from "@mantine/core";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
@@ -8,11 +9,13 @@ export default function App({
   pageProps,
 }: AppProps<{ initialSession: Session }>) {
   return (
-    <SessionContextProvider
-      supabaseClient={createClient}
-      initialSession={pageProps.initialSession}
-    >
-      <Component {...pageProps} />;
-    </SessionContextProvider>
+    <MantineProvider withGlobalStyles withNormalizeCSS>
+      <SessionContextProvider
+        supabaseClient={createClient}
+        initialSession={pageProps.initialSession}
+      >
+        <Component {...pageProps} />;
+      </SessionContextProvider>
+    </MantineProvider>
   );
 }
