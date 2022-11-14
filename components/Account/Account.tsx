@@ -1,11 +1,12 @@
+import { Database } from "@/utils/database.types";
 import {
   Session,
   useSupabaseClient,
   useUser,
 } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
-import { Database } from "../utils/database.types";
-import Avatar from "./Avatar";
+import Avatar from "../Avatar";
+import styles from "./Account.module.scss";
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
 
 export default function Account({ session }: { session: Session }) {
@@ -82,6 +83,7 @@ export default function Account({ session }: { session: Session }) {
 
   return (
     <div className="form-widget">
+      <h1 className={styles.headerText}>Account Page</h1>
       <Avatar
         uid={session.user.id}
         url={avatar_url}
