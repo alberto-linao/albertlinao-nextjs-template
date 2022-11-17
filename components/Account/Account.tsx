@@ -4,7 +4,9 @@ import {
   useSupabaseClient,
   useUser,
 } from "@supabase/auth-helpers-react";
-import { useEffect, useState } from "react";
+import CartContext from "contexts/CartContext";
+import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
 import Avatar from "../Avatar";
 import styles from "./Account.module.scss";
 type Profiles = Database["public"]["Tables"]["profiles"]["Row"];
@@ -16,6 +18,8 @@ export default function Account({ session }: { session: Session }) {
   const [username, setUsername] = useState<Profiles["username"]>(null);
   const [website, setWebsite] = useState<Profiles["website"]>(null);
   const [avatar_url, setAvatarUrl] = useState<Profiles["avatar_url"]>(null);
+
+  const cart = useContext(CartContext);
 
   useEffect(() => {
     getProfile();
@@ -134,6 +138,13 @@ export default function Account({ session }: { session: Session }) {
           Sign Out
         </button>
       </div>
+
+      <p>My Cart:</p>
+      <p>{JSON.stringify(cart)}</p>
+
+      <Link href="/protected/secret">
+        <button>Buy Something </button>
+      </Link>
     </div>
   );
 }
