@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "pre-commit:lint-test": "npx eslint \"__tests__/**\"  ",
+    "pre-commit:style": "npx stylelint -f verbose \"**/*.module.scss\" --fix",
+    "pre-commit:test": "jest",
+    "pre-push": "jest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
