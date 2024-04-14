@@ -1,0 +1,5 @@
+# .git should be initialized by each dev to their own github account
+.git
+
+# node_modules will be automatically installed by docker postCreateCommand
+node_modules

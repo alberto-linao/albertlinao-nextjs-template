@@ -1,6 +1,5 @@
 import { MantineProvider } from "@mantine/core";
 import { Session, SessionContextProvider } from "@supabase/auth-helpers-react";
-import CartContext from "contexts/CartContext";
 import type { AppProps } from "next/app";
 import "../styles/globals.css";
 import createClient from "../utils/supabase";
