@@ -25,6 +25,7 @@ export default function BirthdayPage() {
     <>
       <h1>Birthday Celebrants</h1>
       <p>Happy Birthday!</p>
+      <p>Ranz Manalo</p>
       <BirthdayList />
     </>
   );
