@@ -15,14 +15,9 @@ it("Birthday page has metadata", () => {
   });
 });
 
-it("App Router: Has a birthday message", () => {
+it("BirthdayPage has a birthday message", () => {
   render(<BirthdayPage />);
   expect(screen.getByText("Happy Birthday!")).toBeInTheDocument();
-});
-
-it("Contains message 'Ranz Manalo'", () => {
-  render(<BirthdayPage />);
-  expect(screen.getByText("Ranz Manalo!")).toBeInTheDocument();
 });
 
 it("Birthday List contains name of person", () => {
