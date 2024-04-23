@@ -1,4 +1,3 @@
-import Payment from "@/components/Payment/Payment";
 import { Database } from "@/utils/database.types";
 import {
   Session,
@@ -49,7 +48,6 @@ export default function Secret({ session }: { session: Session }) {
       <h1>Secret Page</h1>
       <p>Page allows for test payment.</p>
       {loading && username && <p>Current User:{username}</p>}
-      <Payment></Payment>
     </div>
   );
 }

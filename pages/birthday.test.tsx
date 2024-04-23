@@ -20,6 +20,11 @@ it("App Router: Has a birthday message", () => {
   expect(screen.getByText("Happy Birthday!")).toBeInTheDocument();
 });
 
+it("Contains message 'Ranz Manalo'", () => {
+  render(<BirthdayPage />);
+  expect(screen.getByText("Ranz Manalo!")).toBeInTheDocument();
+});
+
 it("Birthday List contains name of person", () => {
   render(<BirthdayPage />);
   expect(screen.getAllByRole("listitem")[0]).toHaveTextContent("John Doe");
